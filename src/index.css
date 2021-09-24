@@ -1,13 +1,328 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* The imporant font and mixin */
+@font-face {
+  font-family: singlet;
+  src: url(fonts/Sniglet-Regular.ttf);
+}
+/* Whole page */
+.App {
+  font-family: singlet;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Navigation bar */
+nav {
+  position: absolute;
+  background-color: #212D44;
+  width: 100%;
+  z-index: 1;
 }
+nav #icons {
+  padding-top: 20px;
+}
+nav #icons #numIcon .moveRight {
+  margin-right: 30px;
+}
+nav #icons .moveRight {
+  color: white;
+  margin-right: 15px;
+  font-size: 20px;
+}
+nav #icons #phoneIcon {
+  display: none;
+}
+nav #icons #searchBar {
+  display: none !important;
+  width: 200px;
+  height: 35px;
+  color: black;
+}
+nav #icons #timesIcon {
+  display: none;
+}
+
+/* The banner */
+#banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#banner img {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#banner p {
+  position: absolute;
+  text-align: center;
+  width: 43%;
+  font-size: 45px;
+  top: 37%;
+  left: 50%;
+  line-height: 55px;
+  transform: translate(-50%, 0);
+}
+#banner #moreBtn {
+  position: absolute;
+  text-transform: uppercase;
+  background-color: #005BC5;
+  padding: 10px 25px 10px 25px;
+  top: 57%;
+  left: 50%;
+  letter-spacing: 3px;
+  font-size: 17px;
+  transform: translate(-50%, 0);
+}
+#banner #moreBtn:hover {
+  cursor: pointer;
+  background-color: aqua;
+}
+#banner #chevronLeft {
+  color: #ffffff96;
+  font-size: 400%;
+  position: absolute;
+  top: 45%;
+  left: 2%;
+}
+#banner #chevronLeft:hover {
+  color: white;
+  cursor: pointer;
+}
+#banner #chevronRight {
+  color: #ffffff96;
+  font-size: 400%;
+  position: absolute;
+  top: 45%;
+  left: 96%;
+}
+#banner #chevronRight:hover {
+  color: white;
+  cursor: pointer;
+}
+#banner #angleDown {
+  color: #ffffff96;
+  font-size: 400%;
+  position: absolute;
+  top: 45%;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#banner #angleDown:hover {
+  color: white;
+  cursor: pointer;
+}
+#banner #threeBoxes {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-82px, 0);
+}
+#banner #threeBoxes div {
+  border: 1px solid white;
+  margin-right: 7px;
+  width: 50px;
+  height: 20px;
+}
+#banner #threeBoxes #boxMid {
+  background-color: white;
+}
+#banner #threeBoxes #boxRight {
+  margin-right: 0;
+}
+
+/* Main part with the diverent options */
+#mainCards {
+  margin: 0;
+}
+#mainCards .card {
+  border: solid white 1px;
+  padding: 0;
+}
+#mainCards .card:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  filter: opacity(80%);
+  z-index: 1;
+}
+#mainCards .card img {
+  width: 100%;
+  height: 250px;
+}
+#mainCards .card div {
+  padding: 0;
+  height: 80px;
+}
+#mainCards .card div p {
+  padding-top: 25px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.18em;
+}
+
+/* Footer */
+footer .row {
+  padding: 0;
+  height: 300px;
+}
+footer .row #blackBox {
+  background-color: black;
+  color: white;
+}
+footer .row #blackBox .listText {
+  padding: 5% 0 5% 10px;
+}
+footer .row #blackBox .listText p {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1em;
+}
+footer .row #blackBox .listText ul {
+  list-style-type: none;
+  width: 241px;
+  margin: 0;
+  padding: 2% 120px 0 0;
+}
+footer .row #blackBox .listText ul #emptyList {
+  padding-bottom: 25px;
+}
+footer .row #copyright {
+  padding: 20px 0 20px 25px;
+  background-color: #005BC5;
+}
+footer .row #copyright a {
+  color: white;
+  text-decoration: none;
+}
+footer .row #copyright a .footIcon {
+  margin-right: 10px;
+  font-size: 130%;
+}
+footer .row #copyright a .footIcon:hover {
+  cursor: pointer;
+}
+footer .row #copyright #copyText {
+  margin-right: 25px;
+  float: right;
+}
+footer .row #copyright #copyText a {
+  color: white;
+  text-decoration: none;
+}
+footer .row #copyright #copyText a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1530px) {
+  #banner {
+    height: 70vh;
+  }
+  #banner img {
+    transform: translate(0, -30%);
+  }
+  #banner p {
+    font-size: 35px;
+  }
+  #banner #moreBtn {
+    top: 60%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #banner img {
+    transform: translate(0, -30%);
+  }
+  #banner p {
+    width: 53%;
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #banner img {
+    transform: translate(0, -30%);
+  }
+  #banner p {
+    width: 53%;
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .listText {
+    width: 320px;
+  }
+  .listText ul {
+    font-size: 0.9em;
+    padding: 2% 0 0 0;
+  }
+}
+@media only screen and (max-width: 320px) {
+  nav #icons #numIcon {
+    visibility: hidden;
+  }
+  nav #icons #phoneIcon {
+    display: inline !important;
+  }
+  nav #icons #searchBar {
+    display: none !important;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: black;
+  }
+
+  #banner {
+    height: 60vh;
+  }
+  #banner p {
+    width: 70%;
+    font-size: 25px;
+    line-height: 24px;
+  }
+  #banner #moreBtn {
+    width: 200px;
+    top: 60%;
+    font-size: 15px;
+  }
+  #banner #chevronLeft {
+    display: none;
+  }
+  #banner #chevronRight {
+    display: none;
+  }
+  #banner #angleDown {
+    display: none;
+  }
+  #banner #threeBoxes {
+    display: none;
+  }
+
+  #mainCards .card img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+  #mainCards .card div {
+    position: absolute;
+    width: 75%;
+    left: 80px;
+  }
+
+  footer #map {
+    height: 500px;
+  }
+  footer #copyright {
+    text-align: center;
+  }
+  footer #copyright #copyText {
+    float: none !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

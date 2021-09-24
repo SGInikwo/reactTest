@@ -1,0 +1,364 @@
+/* The imporant font and mixin */
+$font-stack: singlet;
+
+@font-face {
+    font-family: singlet;
+    src: url(fonts/Sniglet-Regular.ttf);
+}
+@mixin arrowIn ($right: false){
+    color:#ffffff96;
+    font-size: 400%;
+    &:hover{
+        color: white;
+        cursor: pointer;
+    }
+
+    position: absolute;
+    top: 45%;
+    @if $right {
+        left: 96%;
+    }
+}
+
+/* Whole page */
+.App {
+  font-family: $font-stack;
+  color: white;
+}
+
+/* Navigation bar */
+nav{
+    position: absolute;
+    background-color: #212D44;
+    width: 100%; 
+    z-index: 1;
+    #icons{
+        padding-top: 20px;
+        #numIcon{
+            .moveRight{
+                margin-right: 30px;
+            }   
+        }
+        .moveRight{
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        #phoneIcon{
+            display: none;
+        }
+        #searchBar{
+            display: none !important;
+            width: 200px;
+            height: 35px;
+            color: black;
+        }
+        #timesIcon{
+            display: none;
+        }
+    }
+}
+
+/* The banner */
+#banner{
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    width: 100vw; 
+    height: 100vh; 
+    img{
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh; 
+        z-index: -1;
+    }
+    p{
+        position: absolute;
+        text-align: center;
+        width: 43%;
+        font-size: 45px;
+        top: 37%;
+        left: 50%;
+        line-height: 55px;
+        transform: translate(-50%, 0);
+    }
+
+    //The find mor button
+    #moreBtn{
+        position: absolute;
+        text-transform: uppercase;
+        background-color: #005BC5;
+        padding: 10px 25px 10px 25px;
+        top: 57%;
+        left: 50%;
+
+        letter-spacing: 3px;
+        font-size: 17px;
+        transform: translate(-50%, 0);
+
+        &:hover{
+            cursor: pointer;
+            background-color: aqua;
+        }
+        
+    }
+
+    // The arrows
+    #chevronLeft{
+        @include arrowIn;
+        left: 2%;
+    }
+
+    #chevronRight{
+        @include arrowIn($right: true);
+    }
+
+    #angleDown{
+        @include arrowIn;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    // The three boxes small rectangles on the screen
+    #threeBoxes{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+    
+        width:100%;
+        transform: translate(-82px, 0);
+        div{
+            border: 1px solid white;
+            margin-right: 7px;
+            width: 50px;
+            height: 20px;
+        }
+        #boxMid{
+            background-color: white;
+        }
+        #boxRight{
+            margin-right: 0;
+        }
+    }
+}
+
+/* Main part with the diverent options */
+#mainCards{
+    margin: 0;
+    .card{
+        border: solid white 1px;
+        padding: 0;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+            filter: opacity(80%);
+            z-index: 1;
+        }
+        img{
+            width: 100%;
+            height: 250px;
+        }
+
+        // The small coloured rectangles
+        div{
+            padding: 0; 
+            height: 80px;
+            p{
+                padding-top: 25px;
+                color: white;
+                text-transform: uppercase;
+                text-align: center;
+
+                letter-spacing: .18em;
+            }
+        }
+    }
+}
+
+/* Footer */
+footer{
+    .row{
+        padding: 0;
+        height: 300px; 
+        #blackBox{
+            background-color: black; 
+            color: white;
+
+            // The list of texts
+            .listText{
+                padding: 5% 0 5% 10px;
+                p{
+                    text-transform: uppercase;
+                    letter-spacing: .15em;
+                    font-size: 1em;
+                }
+                ul{
+                    list-style-type: none;
+                    width: 241px;
+                    margin: 0;
+                    padding: 2% 120px 0 0;
+                    #emptyList{
+                        padding-bottom: 25px;
+                    }
+                }
+            }    
+        }
+        #copyright{
+            padding: 20px 0 20px 25px;
+            background-color: #005BC5;
+            a{
+                color: white;
+                text-decoration: none;
+                .footIcon{
+                    margin-right: 10px;
+                    font-size: 130%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+            #copyText{
+                margin-right: 25px;
+                float: right;
+                a{
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 1530px){
+    #banner{
+        height: 70vh; 
+        img{
+            transform: translate(0, -30%);
+        }
+        p{
+            font-size: 35px;
+        }
+        #moreBtn{
+            top: 60%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    #banner{
+        img{
+            transform: translate(0, -30%);
+        }
+        p{
+            width: 53%;
+            font-size: 30px;
+            line-height: 35px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #banner{
+        img{
+            transform: translate(0, -30%);
+        }
+        p{
+            width: 53%;
+            font-size: 30px;
+            line-height: 35px;
+        }
+    }
+
+    .listText{
+        width: 320px;
+        ul{
+            font-size: .9em;
+            padding: 2% 0 0 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px){
+    nav{
+        #icons{
+            #numIcon{
+                visibility: hidden;
+            }
+            #phoneIcon{
+                display: inline !important;
+            }
+            #searchBar{
+                display: none !important;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                height: 35px;
+                color: black;
+            }
+        }
+    }
+
+    #banner{
+        height: 60vh;
+        p{
+            width: 70%;
+            font-size: 25px;
+            line-height: 24px;
+        }
+        #moreBtn{
+            width: 200px;
+            top: 60%;
+            
+            font-size: 15px;      
+        }
+
+        #chevronLeft{
+            display: none;
+        }
+    
+        #chevronRight{
+            display: none;
+        }
+    
+        #angleDown{
+            display: none
+        }
+        #threeBoxes{
+            display: none;
+        }
+    }
+    
+    #mainCards{
+        .card{
+            img{
+                object-fit: cover;
+                width: 80px;
+                height: 80px;
+            }
+            div{
+                position: absolute;
+                width: 75%;
+                left: 80px;
+            }
+        }
+    }
+
+    footer{
+        #map{
+            height: 500px;
+        }
+        #copyright{
+            text-align: center;
+            #copyText{
+                float: none !important;
+            }
+        }
+    }
+}
