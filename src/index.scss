@@ -53,8 +53,21 @@ nav{
             height: 35px;
             color: black;
         }
+        #searchIcon{
+            &:hover{
+                cursor: pointer;
+            }
+        }
         #timesIcon{
             display: none;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        #ajIcon{
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }

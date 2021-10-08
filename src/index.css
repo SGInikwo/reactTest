@@ -36,8 +36,17 @@ nav #icons #searchBar {
   height: 35px;
   color: black;
 }
+nav #icons #searchIcon:hover {
+  cursor: pointer;
+}
 nav #icons #timesIcon {
   display: none;
+}
+nav #icons #timesIcon:hover {
+  cursor: pointer;
+}
+nav #icons #ajIcon:hover {
+  cursor: pointer;
 }
 
 /* The banner */
